@@ -16,10 +16,9 @@
 
 
 
-.piano {
-    width: 80%;
-    height: 50vh;
-    
+.piano{
+    width: 78%;
+    height: 65vh;
     background-color: white;
     display: flex;
 
@@ -30,6 +29,7 @@
     border: 1px solid black;
     display: flex;
     justify-content: center;
+    text-align: center;
 }
 
 .piano-keys:hover {
@@ -38,6 +38,22 @@
     box-shadow: 0 0 10px rgb(0, 38, 255);
 }
 
+.piano-sub-keys{
+    width: 100%;
+    height: 15rem;
+    border: 1px solid black;
+    background-color:black;
+    margin: 0 0 0 1.8rem;
+    color:#ffff;
+    display: flex;
+    
+}
+
+.piano-sub-keys:hover {
+    transform: scale(1);
+    border-color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px rgb(255, 255, 255);
+}
 /* .playing {
     transform: scale(1.1);
     border-color: rgb(232, 255, 25);
