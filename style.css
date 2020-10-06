@@ -17,39 +17,51 @@
 
 
 .piano{
-    width: 78%;
+    width: 80%;
     height: 65vh;
     background-color: white;
     display: flex;
+    font-size: 1.2rem;
 
 }
 
 .piano-keys {
-    width: 10%;
+    width: 100%;
     border: 1px solid black;
     display: flex;
-    justify-content: center;
+    text-align: center;
+    
+}
+.piano-keys span{
     text-align: center;
 }
 
 .piano-keys:hover {
     transform: scale(1);
-    border-color: rgb(25, 67, 255);
-    box-shadow: 0 0 10px rgb(0, 38, 255);
+    border-color: rgb(146, 11, 85);
+    box-shadow: 0 0 10px rgba(158, 15, 39, 0.548);
 }
 
-.piano-sub-keys{
-    width: 100%;
+.piano-sub-keys-right{
+    width:60%;
     height: 15rem;
     border: 1px solid black;
     background-color:black;
-    margin: 0 0 0 1.8rem;
+    margin: 0 0 0 1.4rem;
     color:#ffff;
     display: flex;
     
 }
+.piano-sub-keys-left{
+    width:60%;
+    height: 15rem;
+    border: 1px solid black;
+    background-color:black;
+    color:#ffff;
+    display: flex;
+}
 
-.piano-sub-keys:hover {
+.piano-sub-keys-right:hover, .piano-sub-keys-left:hover {
     transform: scale(1);
     border-color: rgb(255, 255, 255);
     box-shadow: 0 0 10px rgb(255, 255, 255);
