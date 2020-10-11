@@ -11,82 +11,102 @@
 <body>
     <main class="container">
         <div class="piano">
-            <div class="piano-keys" data-key="65" >
-                <kdb>A</kdb> <!-- do-->
-                <div class="piano-sub-keys-right" data-key="87">
-                  <kdb>W</kdb>
-                </div>
-                
+            <div class="piano-keys key" data-key="65" >
+                <kdb>A</kdb> <!-- do-->            
             </div>
 
-            <div class="piano-keys" data-key="83">
-               
-                <div class="piano-sub-keys-left" data-key="69">
-                    <kbd>E</kbd>
+            <div class="piano-keys key" data-key="83">
+                <div class="piano-sub-keys-right key" data-key="69">
+                    <kbd>W</kbd>
                 </div>
                 <kdb>S</kdb> <!--Ré-->
             </div>
 
-            <div class="piano-keys" data-key="68">
-                <kbd>D</kbd> <!--Fá-->
-                
+            <div class="piano-keys key" data-key="68">
+                <div class="piano-sub-keys-left key" data-key="87">
+                    <kbd>E</kbd> <!--Fá-->
+                </div>
+                <kdb>D</kdb> <!--Ré-->
             </div>
            
-            <div class="piano-keys" data-key="70">
-                <kbd>F</kbd> <!--SOL-->
-                <div class="piano-sub-keys-right" data-key="84">
+            <div class="piano-keys key" data-key="70">
+                <div class="piano-sub-keys-left key" data-key="84">
                     <kbd>T</kbd>
                 </div>
+                <kbd>F</kbd> <!--SOL-->
                
             </div>
 
-            <div class="piano-keys" data-key="71">
-               
-                <div class="piano-sub-keys-left" data-key="89">
-                    <kbd>Y</kbd>
-                </div>
+            <div class="piano-keys key" data-key="71">
                 <kbd>G</kbd>
+
             </div>
 
-            <div class="piano-keys" data-key="72">
-                <kbd>H</kbd><!--Lá-->
-               
-            </div>
-
-            <div class="piano-keys" data-key="74">
-                <kbd>J</kbd> <!--Si-->
-                <div class="piano-sub-keys-right" data-key="73">
+            <div class="piano-keys key" data-key="72">
+                <div class="piano-sub-keys-right key" data-key="73">
                     <kbd>I</kbd>
                 </div>
+                <kbd>H</kbd><!--Lá-->
+
             </div>
 
-            <div class="piano-keys" data-key="75">
-                
-                <div class="piano-sub-keys-left" data-key="79">
-                    <kbd>O</kbd>
+            <div class="piano-keys key" data-key="74">
+                <div class="piano-sub-keys-right key" data-key="89">
+                    <kbd>Y</kbd>
                 </div>
+                <kbd>J</kbd> <!--Si-->
+
+            </div>
+
+            <div class="piano-keys key" data-key="75">
                 <kbd>K</kbd>
             </div>
 
-            <div class="piano-keys" data-key="76">
+            <div class="piano-keys key" data-key="76">
+                <div class="piano-sub-keys-right key" data-key="90">
+                    <kbd>Y</kbd>
+                </div>
                 <kbd>L</kbd>
             </div>
-            <div class="piano-keys" data-key="186">
+            <div class="piano-keys key" data-key="186">
                 <kbd>ç</kbd>
-                <div class="piano-sub-keys-right" data-key="219">
+                <div class="piano-sub-keys-right key" data-key="219">
                 <kbd>´</kbd>
                 </div>
             </div>
-            <div class="piano-keys" data-key="32">
+            <div class="piano-keys key" data-key="32">
                
-                <div class="piano-sub-keys-left" data-key="13">
+                <div class="piano-sub-keys-left key" data-key="13">
                 <kbd>Enter</kbd>
                 </div>
                 <kbd>espaço</kbd>
             </div>
-            
-
     </main>
+
+
+    <script>
+
+    function playSound (e){
+        // const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`)
+
+        const key = document.querySelector(`.key[data-key="${e.keyCode}"]`)
+        console.log(key)
+        
+        // if(!audio) return; // stop the funcition from running all together
+        // audio.currentTime = 0; // rewind to start   
+        // audio.play()
+        key.classList.add('playing')
+    }
+
+    function removeTransition (e) {
+        if( e.propertyName !== 'transform') return   
+        this.classList.remove('playing')
+    }
+
+    const keys = document.querySelectorAll('.key')
+    keys.forEach(key => key.addEventListener('transitionend', removeTransition))
+    window.addEventListener('keydown', playSound)
+    </script>
 </body>
 
 </html>
