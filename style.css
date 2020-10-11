@@ -14,8 +14,6 @@
     align-items: center;
 }
 
-
-
 .piano{
     width: 80%;
     height: 65vh;
@@ -36,10 +34,11 @@
     text-align: center;
 }
 
-.piano-keys:hover {
+.piano-keys.key {
     transform: scale(1);
     border-color: rgb(146, 11, 85);
     box-shadow: 0 0 10px rgba(158, 15, 39, 0.548);
+    transition: all 0.07s;
 }
 
 .piano-sub-keys-right{
@@ -61,10 +60,22 @@
     display: flex;
 }
 
-.piano-sub-keys-right:hover, .piano-sub-keys-left:hover {
+.piano-sub-keys-right.playing, .piano-sub-keys-left.playing {
     transform: scale(1);
     border-color: rgb(255, 255, 255);
     box-shadow: 0 0 10px rgb(255, 255, 255);
+    transition: all 0.07s;
+}
+
+.piano-keys.playing {
+    transform: scale(1.02);
+    border-color: rgb(146, 11, 85);
+    box-shadow: 0 0 10px rgba(158, 15, 39, 0.548);
+    transition: all 0.07s;
+}
+
+.key {
+    transition: all 0.07s;
 }
 /* .playing {
     transform: scale(1.1);
